@@ -1,0 +1,153 @@
+@import 'ibg.css';
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter";
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(253, 141, 13);
+  padding: 0 24px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  position: relative;
+}
+
+.carousel {
+  white-space: nowrap;
+  font-size: 0;
+  position: relative;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.carousel img {
+  height: 340px;
+  margin-left: 14px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 33.3333333333%;
+  cursor: pointer;
+}
+.carousel img:first-child {
+  margin-left: 0;
+}
+
+.dragging {
+  cursor: -webkit-grab;
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.dragging img {
+  pointer-events: none;
+}
+
+.arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  position: absolute;
+}
+
+.arrow-left {
+  left: -23px;
+  display: none;
+}
+.arrow-left img {
+  transform: rotate(180deg);
+}
+
+.arrow-right {
+  right: -23px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,106 @@
+@import 'ibg.css';
+//<ШРИФТЫ>
+
+//<Подключаемы шрифты>
+
+//</Подключаемы шрифты>
+
+//<Шрифт по умолчанию>
+
+$fontfamily:"Inter";
+
+//</Шрифт по умолчанию>
+//</ШРИФТЫ>
+
+//(обнуляющий стиль)=============================================================================
+* {padding: 0;margin: 0; border: 0; }
+*, *:before, *:after {-webkit-box-sizing: border-box;box-sizing: border-box; }
+:focus, :active {outline: none; }
+a:focus, a:active {outline: none; }
+nav, footer, header, aside {display: block; }
+html, body {height: 100%;width: 100%;font-family:$fontfamily; font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; }
+input, button, textarea {font-family: inherit; }
+input::-ms-clear {display: none; }
+button {cursor: pointer; }
+button::-moz-focus-inner {padding: 0;border: 0; }
+a, a:visited {text-decoration: none; }
+a:hover {text-decoration: none; }
+ul li {list-style: none;}
+img {vertical-align: top; }
+h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: 400; }
+//(/обнуляющий стиль)=============================================================================
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: rgb(253, 141, 13);
+	padding: 0 24px;
+}
+.wrapper{
+	//min-height: 100%;
+	//overflow: hidden;
+	max-width: 1200px;
+	position: relative;
+}
+.carousel{
+	white-space: nowrap; //???
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+	scroll-behavior: smooth; //????
+	img{
+		height: 340px;
+		margin-left: 14px;
+		object-fit: cover;
+		width: calc(100% / 3);
+		cursor: pointer;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+}
+.dragging{
+	cursor: grab; //???
+	scroll-behavior: auto; //???
+	img{
+		pointer-events: none; //???
+	}
+}
+.arrow{
+	top:50%;
+	transform: translateY(-50%);
+	background: #fff;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 5;
+	position: absolute;
+}
+.arrow-left{
+	left: -23px;
+	display: none;
+	img{
+		transform: rotate(180deg);
+	}
+}
+.arrow-right{
+	right: -23px;
+}
+
+@media  screen and (max-width:900px) {
+	.carousel img{
+		width: calc(100% / 2);
+	}
+}
+@media  screen and (max-width:550px) {
+	.carousel img{
+		width: 100%;
+	}
+}
+//================================================================================================
